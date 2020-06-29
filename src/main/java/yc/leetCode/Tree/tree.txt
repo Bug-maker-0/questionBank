@@ -1,0 +1,15 @@
+二叉树：
+    前序遍历：前左右
+    中序遍历：左前右
+    后序遍历：左右前
+    DNF深度遍历——从上到下：
+        递归：
+        public int maxDepth(TreeNode root) {
+                if(root == null){
+                    return 0;
+                }
+                int left = maxDepth(root.left);
+                int right = maxDepth(root.right);
+
+                return left >= right ? (left+1) : (right+1);
+        }

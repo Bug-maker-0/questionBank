@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class JZ_19 {
     public ArrayList<Integer> printMatrix(int [][] matrix) {
         ArrayList list = new ArrayList();
+        if(matrix == null || matrix.length == 0 || matrix[0].length == 0)
+            return list;
 
         int up = 0;
         int down = matrix.length - 1;
@@ -13,7 +15,7 @@ public class JZ_19 {
 
         while(true){
             //打印最上面一行
-            for(int col = left ; col < right ; ++col){
+            for(int col = left ; col <= right ; col++){
                 list.add(matrix[up][col]);
             }
             //标记上面这行已经被打印
@@ -22,7 +24,7 @@ public class JZ_19 {
             if(up > down)
                 break;
             //打印最右边一行
-            for(int row = up ; row < down ; ++row){
+            for(int row = up ; row <= down ; row++){
                 list.add(matrix[row][right]);
             }
             //标记右边行被打印
@@ -30,7 +32,7 @@ public class JZ_19 {
             if(left > right)
                 break;
             //打印最下面一行
-            for(int col = right ; col >= left ; --col){
+            for(int col = right ; col >= left ; col--){
                 list.add(matrix[down][col]);
             }
             //标记下边行被打印
@@ -38,7 +40,7 @@ public class JZ_19 {
             if(up > down)
                 break;
             //打印最左边一行
-            for(int row = up ; row >= up ; --row){
+            for(int row = down ; row >= up ; row--){
                 list.add(matrix[row][left]);
             }
             //标记左边行被打印
