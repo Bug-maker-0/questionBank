@@ -1,8 +1,59 @@
 二叉树：
     前序遍历：前左右
+        递归：
+        func preorderTraversal(TreeNode root，List list)  {
+            if root==null{
+                return
+            }
+            // 先访问根再访问左右
+            list.add(root.val);
+            preorderTraversal(root.Left)
+            preorderTraversal(root.Right)
+        }
+        非递归：
+        public void qinaxuFeiDigui(TreeNode treeNode) {
+                Stack<TreeNode> stack = new Stack<TreeNode>();
+                while (treeNode != null || !stack.isEmpty()) {
+                    while (treeNode != null) {
+                        qianxuNumList.add(treeNode.val);
+                        stack.push(treeNode);
+                        treeNode = treeNode.left;
+                    }
+                    if(!stack.isEmpty()){
+                        treeNode = stack.pop();
+                        treeNode = treeNode.right;
+                    }
+                }
+            }
     中序遍历：左前右
     后序遍历：左右前
-    DNF深度遍历——从上到下：
+        非递归：
+        public void houxuFeiDigui(TreeNode treeNode) {
+                Stack<TreeNode> stack = new Stack<TreeNode>();
+                while (treeNode != null || !stack.isEmpty()) {
+                    while (treeNode != null) {
+                        stack.push(treeNode);
+                        treeNode = treeNode.left;
+                    }
+                    boolean tag = true;
+                    TreeNode preNode = null;  // 前驱节点
+                    while (!stack.isEmpty() && tag == true) {
+                        treeNode = stack.peek();
+                        if (treeNode.right == preNode) { // 之前访问的为空节点或是栈顶节点的右子节点
+                            treeNode = stack.pop();
+                            houxuNumList.add(treeNode.val);
+                            if (stack.isEmpty()) {
+                                return;
+                            } else {
+                                preNode = treeNode;
+                            }
+                        } else {
+                            treeNode = treeNode.right;
+                            tag = false;
+                        }
+                    }
+                }
+    DFS深度遍历——从上到下：
         递归：
         public int maxDepth(TreeNode root) {
                 if(root == null){
