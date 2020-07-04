@@ -53,6 +53,24 @@
                         }
                     }
                 }
+
+    层次遍历：
+          private static void levelOrder(TreeNode root) {
+          		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+          		if(root == null)
+          			return;
+          		queue.offer(root);
+          		while(!queue.isEmpty()){
+          			TreeNode temp  = queue.poll();
+          			System.out.print(temp.val + " ");
+          			if(temp.left != null)
+          				queue.offer(temp.left);
+          			if(temp.right != null)
+          				queue.offer(temp.right);
+          		}
+          	}
+
+
     DFS深度遍历——从上到下：
         递归：
         public int maxDepth(TreeNode root) {
@@ -64,3 +82,6 @@
 
                 return left >= right ? (left+1) : (right+1);
         }
+
+
+
