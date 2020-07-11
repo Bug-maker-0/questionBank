@@ -22,6 +22,12 @@ public class JZ_24 {
         return result;
     }
 
+    public int pathSum(TreeNode root,int sum){
+
+        ArrayList<ArrayList<Integer>> path = FindPath(root,sum);
+        return result.size();
+    }
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         TreeNode tou = root;
@@ -40,10 +46,14 @@ public class JZ_24 {
         ArrayList<ArrayList<Integer>> list1 = jz_24.FindPath(tou,18);
         for (ArrayList list:list1
              ) {
+            System.out.println();
             for (Object i:list
                  ) {
-                System.out.println(i);
+                System.out.print(i+"，");
             }
         }
+
+        System.out.println();
+        System.out.println(jz_24.pathSum(root,18));
     }
 }

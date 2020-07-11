@@ -11,8 +11,13 @@ public class LeetCode_437 {
     ArrayList<Integer> list = new ArrayList<>();
 
     public int pathSum(TreeNode root, int sum) {
+        temp(root,sum);
+        return result.size();
+    }
+
+    public ArrayList<ArrayList<Integer>> temp(TreeNode root,int sum){
         if(root == null)
-            return result.size();
+            return result;
         list.add(root.val);
         sum -= root.val;
         if(sum == 0 && root.left == null && root.right == null)
@@ -20,11 +25,28 @@ public class LeetCode_437 {
         pathSum(root.left,sum);
         pathSum(root.right,sum);
         list.remove(list.size()-1);
-        return result.size();
+        return result;
     }
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        TreeNode tou = root;
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        TreeNode temp = root.right;
+        root = root.left;
+        root.left = new TreeNode(4);
+        root.right = new TreeNode(5);
+        temp.left = new TreeNode(6);
+        temp.right = new TreeNode(7);
+        root.right.left = new TreeNode(10);
+        temp.left.left = new TreeNode(8);
+
+
+        LeetCode_437 leetCode_437 = new LeetCode_437();
+        int a = leetCode_437.pathSum(root,18);
+        System.out.println(a);
     }
 
 }
