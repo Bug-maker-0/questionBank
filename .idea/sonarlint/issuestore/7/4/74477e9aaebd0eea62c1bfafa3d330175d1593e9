@@ -1,0 +1,16 @@
+
+{
+java:S2293
+"YReplace the type specification in this constructor call with the diamond operator ("<>").(‡…”„ùÿÿÿÿ8Ïš÷°ø/
+u
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(±ˆ×e8Ğš÷°ø/
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ïœ›8Óš÷°ø/
+m	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÚÚ£ñ8Ôš÷°ø/
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¥âÔ½8Õš÷°ø/
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÂÇÄüÿÿÿÿ8Öš÷°ø/
+T
+java:S1854""7Remove this useless assignment to local variable "tou".(ˆ¨½£8Äš÷°ø/
+E
+java:S1481""(Remove this unused "tou" local variable.(ˆ¨½£8Çš÷°ø/
+Z	java:S1061"9Replace this use of System.out or System.err by a logger.(æ¨¤šøÿÿÿÿ8Íš÷°ø/
