@@ -31,12 +31,13 @@ public class RandomStr {
         return stringBuffer.toString();
     }
 
-
+    static int a = 1;
+    static int b = 2;
     public static void main(String[] args) {
 
-        for (int i = 0; i < 1000; i++) {
-            System.out.println("ANDROID_" + createRandomStr2(16));
-        }
+
+        String c ="3";
+        System.out.println(a+b+c);
     }
 
 }

@@ -56,10 +56,35 @@ public class TwoNums {
         return null;
     }
 
+    public static int[] twoSum2(int[] nums, int target) {
+        if(nums.length <= 1) {
+            return null;
+        }
+
+
+        int i = 0, j = nums.length -1;
+
+        while (i < j) {
+            if (nums[i] + nums[j] > target){
+                j--;
+            }else if(nums[i] + nums[j] < target){
+                i++;
+            }else {
+                return new int[]{i,j};
+            }
+        }
+
+        return null;
+
+    }
+
     public static void main(String[] args) {
         int[] nums = {14,15,16,22,53,60};
         int target = 76;
         int[] qwe = twoSumV2(nums,target);
-        System.out.println("qwe: " + twoSum(nums,target));
+
+        int[] qw = twoSum2(nums,target);
+
+        System.out.println("qwe: " + twoSum2(nums,target));
     }
 }
